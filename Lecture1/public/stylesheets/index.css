@@ -1,0 +1,323 @@
+/* body{
+  background-color: black;
+} */
+
+    /* Font Consistency */
+    html,
+    body {
+      font-family: 'Roboto Mono', monospace;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      min-width: 450px;
+    }
+
+    body {
+      background-color: #0D0D0D;
+      /* Deep Black */
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Pulsing Border Animation */
+    @keyframes pulseBorder {
+      0% {
+        border-color: #00d1ff;
+      }
+
+      /* Bright Blue */
+      14.28% {
+        border-color: #C41E3A;
+      }
+
+      /* Subdued Red */
+      28.56% {
+        border-color: #FFD700;
+      }
+
+      /* Yellow */
+      42.84% {
+        border-color: #FF1493;
+      }
+
+      /* Rose */
+      57.12% {
+        border-color: #32CD32;
+      }
+
+      /* Green */
+      71.4% {
+        border-color: #8A2BE2;
+      }
+
+      /* Purple */
+      85.68% {
+        border-color: #FFFFFF;
+      }
+
+      /* White */
+      100% {
+        border-color: #00d1ff;
+      }
+
+      /* Bright Blue */
+    }
+
+    .title-banner {
+      background-color: #2E2E2E;
+      /* Slate Gray */
+      color: #FFFFFF;
+      padding: 20px;
+      text-align: center;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      min-width: 450px;
+      border-bottom: 3px solid;
+      /* Initial border color set by animation */
+      animation: pulseBorder 28s linear infinite;
+    }
+
+    .title-banner h1 {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 3rem;
+      margin: 0;
+      color: #FFFFFF;
+    }
+
+    .title-banner p {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: #FFFFFF;
+    }
+
+    .demo-toggle-btn {
+      z-index: 10000;
+      background: transparent;
+      /* Subdued Red */
+      color: #FFFFFF;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      width: 10rem;
+      margin: 20px auto;
+      display: block;
+      position: relative;
+      cursor: pointer;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 1rem;
+    }
+
+    /* Navbar Toggler */
+    .navbar-toggler {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: none;
+      border: none;
+      color: #00d1ff;
+      /* Subdued Yellow */
+      padding: 10px;
+      font-size: 1.5rem;
+      z-index: 1100;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out, color 0.3s ease;
+    }
+
+    .navbar-toggler.open {
+      transform: rotate(90deg);
+      color: #C41E3A;
+      /* Red when open */
+    }
+
+    /* Navigation Menu */
+    .nav-menu {
+      background-color: #1E1E1E;
+      /* Slightly Lighter Slate */
+      z-index: 1000;
+      position: fixed;
+      top: 80px;
+      /* Below the title-banner */
+      left: 0;
+      height: calc(100% - 80px);
+      /* Adjust height to avoid overlapping footer */
+      width: 250px;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-menu.show {
+      transform: translateX(0);
+    }
+
+    .menu-list a {
+      display: block;
+      color: #32CD32;
+      /* Purple */
+      padding: 10px;
+      text-decoration: none;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 1rem;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .menu-list a:hover {
+      background-color: #8A2BE2;
+      /* Subdued Rose on Hover */
+      color: #FFFFFF;
+    }
+
+    .menu-list div {
+      padding: 10px;
+      font-weight: bold;
+      border-top: 1px solid #FFD700;
+      /* Yellow Border Top */
+      border-bottom: 1px solid #FFD700;
+      /* Yellow Border Bottom */
+      margin-top: 10px;
+      color: #FF1493;
+      /* Green */
+      font-family: 'Roboto Mono', monospace;
+    }
+
+    .body-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+      padding: 20px;
+      z-index: 0;
+      background-color: #0D0D0D;
+      /* Deep Black */
+    }
+
+    .cover,
+    iframe {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+    }
+
+    .cover {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #0D0D0D;
+      /* Deep Black */
+      color: #FFFFFF;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .md-content {
+      padding: 20px;
+      max-width: 800px;
+      text-align: center;
+      font-family: 'Roboto Mono', monospace;
+      color: #FFFFFF;
+    }
+
+    iframe {
+      border: none;
+      display: none;
+      /* Initially hidden */
+      background-color: #0D0D0D;
+      /* Deep Black */
+    }
+
+    footer {
+      background-color: #2E2E2E;
+      /* Slate Gray */
+      text-align: center;
+      padding: 20px 0;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      border-top: 3px solid;
+      /* Initial border color set by animation */
+      animation: pulseBorder 28s linear infinite;
+    }
+
+    /* Footer Link Styling */
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .footer-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #FFFFFF;
+      text-decoration: none;
+      margin: 0 10px;
+      font-family: 'Roboto Mono', monospace;
+      transition: color 0.3s ease;
+    }
+
+    .footer-link i {
+      margin-bottom: 5px;
+      width: 24px;
+      height: 24px;
+      color: #FFFFFF;
+    }
+
+    .footer-link:hover {
+      color: #FF4500;
+      /* Subdued Orange Red on Hover */
+    }
+
+    /* Scrollbar Styling */
+    /* WebKit */
+    .nav-menu::-webkit-scrollbar,
+    .body-content::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .nav-menu::-webkit-scrollbar-track,
+    .body-content::-webkit-scrollbar-track {
+      background: #111111;
+    }
+
+    .nav-menu::-webkit-scrollbar-thumb,
+    .body-content::-webkit-scrollbar-thumb {
+      background-color: #555555;
+      border-radius: 4px;
+    }
+
+    /* Firefox */
+    .nav-menu,
+    .body-content {
+      scrollbar-width: thin;
+      scrollbar-color: #555555 #111111;
+    }
+
+    /* Responsive Styles */
+    @media (min-width: 992px) {
+      .nav-menu {
+        top: 80px;
+        height: calc(100% - 80px);
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      .nav-menu {
+        top: 80px;
+        height: calc(100% - 80px);
+      }
+    }
+  
